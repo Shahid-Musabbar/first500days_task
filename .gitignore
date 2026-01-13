@@ -1,0 +1,8 @@
+__pycache__
+data/
+faiss_index/
+.venv
+main.py
+trial.py
+rag.py
+.env
