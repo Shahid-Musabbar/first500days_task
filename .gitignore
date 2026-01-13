@@ -1,5 +1,9 @@
 __pycache__
-data/
+data/DL Test.pdf
+data/Today's Progress 492025.txt
+data/Driving License Test.pdf
+data/SreeMridhula_Resume.pdf
+data/Shahid_Zocket.pdf
 faiss_index/
 .venv
 main.py
