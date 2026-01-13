@@ -39,7 +39,7 @@ toolbox = [
     tool,] # retrieve_context
 agent = create_agent(
     llm,
-    tools=toolbox,
+    tools=[],
     checkpointer=InMemorySaver(),
     system_prompt="You are a helpful assistant that answers using provided context."
 )
