@@ -35,7 +35,8 @@ llm = ChatOpenAI(
 )
 
 tool = {"type": "web_search_preview"}
-toolbox = [tool,] #retrieve_context
+toolbox = [
+    tool,] # retrieve_context
 agent = create_agent(
     llm,
     tools=toolbox,
@@ -92,25 +93,7 @@ def add_pdf_pagewise(pdf_path: str):
 
 def retrieve_context(query: str, k: int = 4) -> str:
     """
-    Perform a similarity search against the FAISS-backed vector store and
-    format the retrieved documents into a single context string.
-
-    The function queries the in-memory `vector_store` for the top-`k`
-    most similar document chunks to `query`. Retrieved documents are
-    formatted with their source metadata (file name and page) and
-    concatenated into a human-readable context block suitable for
-    inclusion in an LLM prompt.
-
-    Args:
-        query (str): The user's query used to find relevant document
-            chunks in the vector store.
-        k (int): Number of top similar documents to return (default 4).
-
-    Returns:
-        tuple: A pair `(context, docs)` where `context` is a single
-        string containing the formatted document excerpts (or the
-        message "No relevant documents found."), and `docs` is the
-        list of retrieved document objects from the vector store.
+    Similarity search → formatted context
     """
     docs = vector_store.similarity_search(query=query, k=k)
 
