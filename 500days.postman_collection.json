@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "59aea256-8e8e-4ae2-a347-a06e22e13d2f",
+		"name": "500days",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40192326"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/ask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"hat is my work experience\",\r\n    \"session_id\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/ask",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"ask"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/ask",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"hat is my work experience\",\r\n    \"session_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/ask",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ask"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 13 Jan 2026 08:03:14 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1474"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"answer\": \"Your work experience includes the following positions:\\n\\n1. **AI Intern at Adrig AI Technologies Pvt. Ltd** (Chennai, On-site)  \\n   - Duration: October 2024 – January 2025  \\n   - Responsibilities: Built a Sales Agent for E-commerce websites, designed a custom RAG workflow for multi-lingual context vector search, and developed a Compliance Evaluation Agent for the GFCF framework.\\n\\n2. **Founder Office Tech Intern at ZOCKET** (Chennai, On-site)  \\n   - Duration: January 2025 – February 2025  \\n   - Responsibilities: Built AI Agents using Langgraph and CrewAI, and created a MCP server for an SEO AI Agent.\\n\\n3. **AI/ML Engineer Intern at SUSTAIN AI STUDIOS** (Work From Home)  \\n   - Duration: February 2025 – May 2025  \\n   - Responsibilities: Implemented an end-to-end Compliance Evaluation Agent for Singapore Building Sustainability Frameworks, built a Vector DB for existing frameworks, and developed customized automations in the compliance tool.\\n\\n4. **AI Engineer - Freelancer at MANIFOLD SYSTEMS** (Work From Home)  \\n   - Duration: July 2025 – Present  \\n   - Responsibilities: Built and deployed production AI agents, developed domain-specific agents (health, sales, research), and managed agents across multi-cloud environments (AWS, Google, Azure).\\n\\nThis experience showcases your skills in AI agent development, compliance evaluation, and working with various technologies and frameworks.\",\n    \"source\": [\n        \"updated-resume.pdf_page_1\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/upload-pdf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/from ssd/Downloads/updated-resume.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/upload-pdf",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"upload-pdf"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/upload-pdf",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/from ssd/Downloads/DL Test.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/upload-pdf",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"upload-pdf"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 13 Jan 2026 07:25:28 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "62"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"DL Test.pdf indexed page-wise\"\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/upload-pdf",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/from ssd/Downloads/updated-resume.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/upload-pdf",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"upload-pdf"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 13 Jan 2026 07:57:45 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "69"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"updated-resume.pdf indexed page-wise\"\n}"
+				}
+			]
+		}
+	]
+}
