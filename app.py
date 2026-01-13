@@ -100,7 +100,7 @@ def retrieve_context(query: str, k: int = 4) -> str:
     return "\n\n".join(
         f"[{d.metadata['file_name']} - page {d.metadata['page']}]\n{d.page_content}"
         for d in docs
-    )
+    ) , docs
 
 # -------------------------------------------------------------------
 # 4. API SCHEMAS
@@ -112,7 +112,7 @@ class AskRequest(BaseModel):
 
 class AskResponse(BaseModel):
     answer: str
-    # source: List[str] | None = None
+    source: List[str] | None = None
 
 # -------------------------------------------------------------------
 # 5. ROUTES
@@ -140,7 +140,7 @@ def ask_question(request: AskRequest):
     """
     Query → similarity search → agent response
     """
-    context = retrieve_context(request.query)
+    context, docs = retrieve_context(request.query)
 
     final_prompt = f"""
 Use the context below to answer the question.
@@ -158,7 +158,13 @@ Question:
     )
 
     answer = result["messages"][-1].content
-    return AskResponse(answer=answer)
+
+    sources = [
+    f"{d.metadata.get('file_name')}_page_{d.metadata.get('page')}"
+    for d in docs
+]
+
+    return AskResponse(answer=answer, source=sources)
 
 # -------------------------------------------------------------------
 # 6. OPTIONAL CLI (SAME FILE)
